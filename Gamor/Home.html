@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" id="CSS">
+    <title>Gamor</title>
+</head>
+
+<body style="height: 2000px;">
+    <span id="Start"></span>
+    <div id="Header">
+        <h3 style="text-align: center; font-family: sans-serif;" id="TopHead">Gamor</h3>
+        <div id="NavBar">
+            <div id="LeftBar">
+                <ul id="leftBar" class="nav">
+                    <li>
+                        <a href="#Start">Home</a>
+                    </li>
+                    <li>
+                        <a href="#Start">Streams</a>
+                    </li>
+                    <li>
+                        <a href="#Start">Party</a>
+                    </li>
+                    <li>
+                        <a href="#Start">Premiun</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="LoginBar">
+                <button type="button" id="Mode">Change Mode</button>
+                <ul id="loginBar" class="nav">
+                    <li>
+                        <a href="Login.html" target="_blank" id="SignIn">Sign In</a>
+                    </li>
+                    <li>
+                        <a href="Login.html" target="_blank" id="CreateAccount">
+                            Create account</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="UserBar">
+                <p id="User"></p>
+            </div>
+        </div>
+    </div>
+    <div id="MainBoard">
+
+        <div id="Summary" class="contentCol">
+            <!-- <p style="margin: 10px;">
+                Hello, and Welcome to Gamor, the best games shop. We are proud to present a large ammount of offers
+                to our members. We currently have <span id="number_of_games"></span> games at your disposal, and they
+                are at very good cost. We work to make you happy, with us you'll have everything you ever wanted and
+                more;
+                so, what are you waiting for?? <a href="Login.html" target="_blank" style="text-decoration: none;">Sign
+                    in now</a>
+                and start enjoying our services!!
+            </p> -->
+        </div>
+        <div id="PicsShow" class="contentCol">
+            <button id="prevPic">Left</button>
+            <button id="nextPic">Right</button>
+        </div>
+        <div id="GameSearch" class="contentCol">
+            <h4 style="position: relative; left: 25%; max-width: 50%;" id="Chosse_Plattform">Choose Plattform!!</h4>
+            <div>
+                <ul id="ChooseArea" style="list-style: none; display: flex; flex-direction: row; justify-content: space-evenly;">
+                    <li >
+                        <button class="Choise">Party</button>
+                    </li>
+                    <li > 
+                        <button class="Choise">Matchs</button>
+                    </li>
+                    <li >
+                        <button class="Choise">Streams</button>
+                    </li>
+                </ul>
+            </div>
+            <h4 style="position: relative; left: 25%; max-width: 50%;" id="SearchHeading">Search for your favorite
+                games!!</h4>
+            <div id="SearchArea">
+                <input type="text" name="SearchBox" id="searchBox">
+                <div id="SearchResults">
+
+                </div>
+                <button type="button" id="Search">
+                    Search Now!
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+    <div id="CategorySect">
+        <h3 id="CatHeading">
+            Trending Categories
+        </h3>
+        <div id="Categories">
+            <div class="Category">
+                <p>Action Games</p>
+            </div>
+            <div class="Category">
+                <p>Sports Games</p>
+            </div>
+            <div class="Category">
+                <p>Adventures Games</p>
+            </div>
+            <div class="Category">
+                <p>Arcade Games</p>
+            </div>
+            <div class="Category">
+                <p>Fantasy Games</p>
+            </div>
+            <div class="Category">
+                <p>Strategy Games</p>
+            </div>
+            <div class="Category">
+                <p>Shooter Games</p>
+            </div>
+            <div class="Category">
+                <p>All Categories</p>
+            </div>
+        </div>
+    </div>
+    <script src="Main.js"></script>
+</body>
+
+</html>

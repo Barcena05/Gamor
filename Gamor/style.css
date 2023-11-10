@@ -1,0 +1,408 @@
+:root {
+    --InText: white;
+    --backCol: rgb(26, 32, 40);
+    --inCol: rgb(33, 39, 47);
+    --leftBarText: rgb(76, 83, 88);
+    --leftBarHover: rgb(162, 82, 35);
+    --logBarHover: rgb(76, 83, 88);
+    --PicsButtom: rgba(255, 255, 255, 0.3);
+    --createAccount: rgb(19, 23, 28);
+    --categoryHover: darkorchid;
+    --SearchHover: white;
+    --ModeHover: rgb(76, 83, 88);
+}
+
+body {
+    background-color: var(--backCol);
+}
+
+#TopHead {
+    color: var(--InText);
+}
+
+#Header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: inherit;
+}
+
+#LeftBar {
+    float: left;
+    width: 50%;
+}
+
+#LoginBar {
+    float: right;
+    width: 50%;
+}
+
+#UserBar {
+    display: block;
+    float: right;
+    clear: both;
+}
+
+#User {
+    float: right;
+    background: transparent;
+    border-style: none;
+    border-radius: 10px;
+    color: var(--InText);
+    font-size: medium;
+    padding: 5px;
+    font-family: cursive;
+}
+
+#Mode {
+    float: right;
+    background: transparent;
+    border-style: none;
+    border-radius: 10px;
+    color: var(--InText);
+    font-size: medium;
+    padding: 5px;
+}
+
+#Mode:hover {
+    background-color: var(--ModeHover);
+}
+
+#NavBar {
+    overflow: hidden;
+}
+
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: inline-block;
+    background-color: inherit;
+    border-style: hidden;
+    border-radius: 15px;
+    font-size: small;
+}
+
+.nav>li {
+    background-color: inherit;
+    border-style: hidden;
+    border-radius: 15px;
+    margin: 6px;
+    max-height: fit-content;
+}
+
+#leftBar>li>a {
+    text-align: center;
+    text-decoration: none;
+    overflow: auto;
+    color: var(--leftBarText);
+}
+
+#leftBar>li>a:hover {
+    color: var(--leftBarHover);
+    border-style: groove;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: var(--leftBarHover);
+}
+
+#leftBar>li {
+    float: left;
+}
+
+
+#loginBar {
+    float: right;
+    font-size: medium;
+}
+
+#CreateAccount {
+    border-style: hidden;
+    border-width: 1px;
+    border-radius: 20px;
+    background-color: var(--createAccount);
+}
+
+#SignIn {
+    border-style: hidden;
+    border-radius: 20px;
+}
+
+#CreateAccount:hover,
+#SignIn:hover {
+    background-color: var(--logBarHover);
+}
+
+#loginBar>li {
+    float: left;
+}
+
+#loginBar>li>a {
+    text-align: center;
+    text-decoration: none;
+    overflow: auto;
+    color: var(--InText);
+    padding: 10px;
+}
+
+.contentCol {
+    float: left;
+}
+
+#MainBoard {
+    position: relative;
+    margin-top: 100px;
+    overflow: hidden;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-style: hidden;
+    border-radius: 20px;
+}
+
+#Summary {
+    height: 400px;
+    width: 30%;
+    color: var(--InText);
+    font-style: italic;
+    overflow-y: scroll;
+    background-image: url("resources/a.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#PicsShow {
+    height: 400px;
+    position: relative;
+    width: 40%;
+    background-image: url('resources/Assasins Creed.png');
+    background-size: 100% 400px;
+}
+
+#Pic {
+    max-width: 100%;
+    height: 400px;
+}
+
+#prevPic {
+    position: absolute;
+    left: 0;
+    top: 200px;
+    background-color: var(--PicsButtom);
+}
+
+#nextPic {
+    position: absolute;
+    right: 0;
+    top: 200px;
+    background-color: var(--PicsButtom);
+}
+
+#SearchHeading {
+    color: var(--InText);
+}
+
+#GameSearch {
+    height: 400px;
+    width: 30%;
+    overflow: auto;
+    position: relative;
+    background-color: var(--inCol);
+    color: var(--InText);
+}
+
+#SearchArea {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--backCol);
+    margin-left: 10%;
+    margin-right: 10%;
+    border-style: hidden;
+    border-radius: 10px;
+}
+
+#ChooseArea {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin: auto;
+    width: 80%;
+    border-style: hidden;
+    border-radius: 20px;
+    background-color: var(--backCol);
+}
+
+.Choise {
+    border-style: hidden;
+    border-radius: 10px;
+    height: 50px;
+    color: var(--InText);
+    background-color: transparent;
+}
+
+.Choise:hover {
+    background-color: var(--inCol);
+}
+
+#searchBox {
+    position: relative;
+    background-color: transparent;
+    border-style: hidden hidden solid hidden;
+    border-color: var(--inCol);
+    color: var(--InText);
+}
+
+#SearchResults {
+    height: 200px;
+    overflow: auto;
+}
+
+#SearchResults>p {
+    text-align: center;
+    max-width: 100%;
+}
+
+#SearchResults>p:hover {
+    background-color: var(--categoryHover);
+}
+
+#searchBox:focus {
+    border-style: hidden;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    text-align: center;
+}
+
+#Search {
+    background-color: var(--InText);
+    color: var(--backCol);
+    text-align: center;
+    border-style: hidden;
+    border-radius: 10px;
+    height: 50px;
+}
+
+#Search:hover {
+    background-color: var(--backCol);
+    color: var(--SearchHover);
+}
+
+#CatHeading {
+    color: var(--InText);
+}
+
+#CategorySect {
+    margin-top: 100px;
+    position: relative;
+    overflow: hidden;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#Categories {
+    display: flex;
+    flex-wrap: wrap;
+    counter-reset: cat;
+}
+
+.Category {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20%;
+    width: 200px;
+    height: 100px;
+    font-size: small;
+    background-color: var(--inCol);
+    margin: 0.5%;
+    border-style: hidden;
+    border-radius: 10px;
+    color: var(--InText);
+}
+
+.Category:hover {
+    background-color: var(--categoryHover);
+}
+
+.Category>p:first-of-type::before {
+    counter-increment: cat;
+    content: counter(cat) " ";
+}
+
+@media (max-width: 850px) {
+    #Summary {
+        width: 50%;
+    }
+
+    #PicsShow {
+        width: 50%;
+    }
+
+    #GameSearch {
+        width: 100%;
+    }
+}
+
+@media (max-width:700px) {
+    #Summary {
+        width: 100%;
+        height: auto;
+    }
+
+    #PicsShow {
+        width: 100%;
+    }
+
+    #GameSearch {
+        width: 100%;
+    }
+}
+
+.Register {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10% 25%;
+    font-size: 100%;
+    background-color: var(--inCol);
+    border-style: hidden;
+    border-radius: 15px;
+    padding: 5%;
+    text-align: center;
+    color: var(--InText);
+}
+
+.Register>input {
+    background-color: inherit;
+    border-radius: 10px;
+    color: var(--InText);
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.Register>input:focus {
+    border-style: hidden;
+}
+
+.Register>button {
+    width: 50%;
+    margin: auto;
+    background-color: inherit;
+    color: var(--InText);
+    border-style: hidden;
+    border-radius: 15px;
+    margin-bottom: 5px;
+}
+
+.Register>#SwitchToRegister,
+.Register>#SwitchToLog {
+    margin: 15px auto;
+    padding: 15px;
+}
+
+.Register>button:hover {
+    background-color: var(--createAccount);
+}

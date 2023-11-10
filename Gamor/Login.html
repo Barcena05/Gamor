@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="style.css" id="CSS">
+        <title>Login</title>
+    </head>
+
+    <body>
+        <div id="Log" class="Register">
+            <h1>
+                Welcome, please introduce your name and your password to Log In
+            </h1>
+            <p>
+                Name:
+            </p>
+            <input type="text" name="NameIn" id="NameIn">
+            <p>
+                Password:
+            </p>
+            <input type="password" name="PassIn" id="PassIn">
+            <button type="button" id="ShowPass">Show Password</button>
+            <button type="button" id="logAccept">Accept</button>
+            <button type="button" id="logCancel">Cancel</button>
+            <button type="button" id="SwitchToRegister">Register</button>
+        </div>
+        <div id="Sign" class="Register" style="display: none;">
+            <h1>
+                Welcome, please introduce the required data to Sign In
+            </h1>
+            <p>
+                Introduce your firstname
+            </p>
+            <input type="text" name="DataIn" id="sign_firstname_in">
+            <p>
+                Introduce your lastname
+            </p>
+            <input type="text" name="DataIn" id="sign_lastname_in">
+            <p>
+                Introduce your username
+            </p>
+            <input type="text" name="DataIn" id="sign_username_in">
+            <p>
+                Introduce your password
+            </p>
+            <input type="password" name="DataIn" id="sign_pass_in">
+            <p>
+                Please select the games you want to purchase
+            </p>
+            <form id="games" style="margin-bottom: 20px;">
+                <input type="checkbox" name="Assasins Creed" id="Assasins_Creed">
+                <label for="Assasins_Creed">Assasins Creed</label> <br>
+                <input type="checkbox" name="Call of Duty" id="CoD">
+                <label for="CoD">Call of Duty</label> <br>
+                <input type="checkbox" name="FIFA" id="FIFA">
+                <label for="FIFA">FIFA</label> <br>
+                <input type="checkbox" name="Fortnite" id="Fortnite">
+                <label for="Fortnite">Fortnite</label> <br>
+                <input type="checkbox" name="The Elder Scrolls V Skyrim" id="Skyrim">
+                <label for="Skyrim">The Elder Scrolls V Skyrim</label> <br>
+            </form>
+            <button type="button" id="show_sign_pass">Show Password</button>
+            <button type="button" id="signAccept">Accept</button>
+            <button type="button" id="signCancel">Cancel</button>
+            <button type="button" id="SwitchToLog">Log</button>
+        </div>
+        <script src="Login.js"></script>
+    </body>
+
+</html>
