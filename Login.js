@@ -60,13 +60,14 @@ Initial_display();
 function loadData() {
     let users = localStorage.getItem("users");
     let user_data;
-    if(users==null) user_data = [];
+    if (users == null) user_data = [];
     else user_data = JSON.parse(users);
     return user_data;
 }
 
 let log_accept = document.getElementById("logAccept");
 log_accept.addEventListener("click", async () => {
+    let completed = false;
     let users = loadData();
     let inLog = document.getElementById("NameIn").value;
     let inPass = document.getElementById("PassIn").value;
@@ -77,7 +78,8 @@ log_accept.addEventListener("click", async () => {
             user_found = true;
             if (element.password === inPass) {
                 console.log("Empingao");
-                localStorage.setItem("User",element.username);
+                localStorage.setItem("User", element.username);
+                completed = true;
             }
             else {
                 alert("Wrong password, please try again");
@@ -86,6 +88,10 @@ log_accept.addEventListener("click", async () => {
         }
     }
     if (!user_found) alert("User not found");
+    if (completed) {
+        window.open('', '_parent', '');
+        window.close();
+    }
 })
 
 let sign_accept = document.getElementById("signAccept");
@@ -107,7 +113,7 @@ sign_accept.addEventListener("click", async () => {
         for (let index = 0; index < games.length; index++) {
             if (games[index].checked) {
                 submitted.push(games[index].name);
-            }            
+            }
         }
         let datas =
         {
@@ -119,8 +125,10 @@ sign_accept.addEventListener("click", async () => {
         }
         console.log(users)
         users.push(datas);
-        console.log(users);        
-        localStorage.setItem("users",JSON.stringify(users));
-        localStorage.setItem("User",datas.username);
+        console.log(users);
+        localStorage.setItem("users", JSON.stringify(users));
+        localStorage.setItem("User", datas.username);
+        window.open('', '_parent', '');
+        window.close();
     }
 })
