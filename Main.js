@@ -106,7 +106,7 @@ search_buttom.addEventListener('click', () => {
     for (let index = 0; index < search_results.children.length; index++) {
         search_results.children[index].remove();        
     }
-    let text_in = search_input.innerText;
+    let text_in = search_input.value;
     let data = loadData();
     for (let index = 0; index < data.length; index++) {
         if (data[index].games.includes(text_in)) {
