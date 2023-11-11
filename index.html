@@ -8,8 +8,7 @@
     <title>Gamor</title>
 </head>
 
-<body style="height: 2000px;">
-    <span id="Start"></span>
+<body>
     <div id="Header">
         <h3 style="text-align: center; font-family: sans-serif;" id="TopHead">Gamor</h3>
         <div id="NavBar">
@@ -49,15 +48,6 @@
     <div id="MainBoard">
 
         <div id="Summary" class="contentCol">
-            <!-- <p style="margin: 10px;">
-                Hello, and Welcome to Gamor, the best games shop. We are proud to present a large ammount of offers
-                to our members. We currently have <span id="number_of_games"></span> games at your disposal, and they
-                are at very good cost. We work to make you happy, with us you'll have everything you ever wanted and
-                more;
-                so, what are you waiting for?? <a href="Login.html" target="_blank" style="text-decoration: none;">Sign
-                    in now</a>
-                and start enjoying our services!!
-            </p> -->
         </div>
         <div id="PicsShow" class="contentCol">
             <button id="prevPic">Left</button>
@@ -65,23 +55,32 @@
         </div>
         <div id="GameSearch" class="contentCol">
             <h4 style="position: relative; left: 25%; max-width: 50%;" id="Chosse_Plattform">Choose Plattform!!</h4>
-            <div>
-                <ul id="ChooseArea" style="list-style: none; display: flex; flex-direction: row; justify-content: space-evenly;">
-                    <li >
-                        <button class="Choise">Party</button>
-                    </li>
-                    <li > 
-                        <button class="Choise">Matchs</button>
-                    </li>
-                    <li >
-                        <button class="Choise">Streams</button>
-                    </li>
-                </ul>
+            <div id="ChooseArea">
+
+                <button class="Choise" id="Party">Party</button>
+
+                <button class="Choise">Matchs</button>
+
+                <button class="Choise">Streams</button>
+
             </div>
             <h4 style="position: relative; left: 25%; max-width: 50%;" id="SearchHeading">Search for your favorite
                 games!!</h4>
             <div id="SearchArea">
-                <input type="text" name="SearchBox" id="searchBox">
+                <div id="searchBox">
+                    <div id="game_name">
+                        Skyrim
+                    </div>
+                    <div id="Games_Selection_Area">
+                        <select id="Game_Selection" name="Game_Selection">
+                            <option id="Assasins_Creed">Assasins Creed</option>
+                            <option id="FIFA">FIFA</option>
+                            <option id="Call_of_Duty">Call of Duty</option>
+                            <option id="Fortnite">Fortnite</option>
+                            <option id="Skyrim">Skyrim</option>
+                        </select>
+                    </div>
+                </div>
                 <div id="SearchResults">
 
                 </div>

@@ -222,22 +222,28 @@ body {
 }
 
 #ChooseArea {
-    display: flex;
-    flex-direction: row;
     position: relative;
     margin: auto;
-    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
     border-style: hidden;
-    border-radius: 20px;
+    border-radius: 50px;
     background-color: var(--backCol);
+    height: 40px;
+    padding: 2%;
 }
-
+#Party
+{
+    background-color: var(--inCol);
+}
 .Choise {
     border-style: hidden;
-    border-radius: 10px;
-    height: 50px;
+    border-radius: 50px;
+    width: 32%;
+    height: 100%;
     color: var(--InText);
     background-color: transparent;
+    float: left;
 }
 
 .Choise:hover {
@@ -250,6 +256,24 @@ body {
     border-style: hidden hidden solid hidden;
     border-color: var(--inCol);
     color: var(--InText);
+    height: 50px;
+}
+#Game_Selection_Area
+{
+    position: relative;
+}
+#game_name
+{
+    float: left;
+    height: 50%;
+}
+#Game_Selection
+{
+    float: right;
+    height: 50%;
+    background-color: transparent;
+    color: var(--InText);
+    border-style: hidden;
 }
 
 #SearchResults {
