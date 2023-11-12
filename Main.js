@@ -17,6 +17,7 @@ function myFunction_set_colors() {
         r.style.setProperty('--categoryHover', 'darkorchid');
         r.style.setProperty('--SearchHover', 'white');
         r.style.setProperty('--ModeHover', 'rgb(76, 83, 88)');
+        r.style.setProperty('--main_img',"url('resources/main_dark_img.png')");
         localStorage.setItem('--InText', 'white');
         localStorage.setItem('--backCol', 'rgb(26, 32, 40)');
         localStorage.setItem('--inCol', 'rgb(33, 39, 47)');
@@ -43,6 +44,7 @@ function myFunction_set_colors() {
         r.style.setProperty('--categoryHover', 'orange');
         r.style.setProperty('--SearchHover', 'black');
         r.style.setProperty('--ModeHover', 'white');
+        r.style.setProperty('--main_img',"url('resources/main_light_img.png')");
         localStorage.setItem('--InText', 'black');
         localStorage.setItem('--backCol', 'rgb(240,240,240)');
         localStorage.setItem('--inCol', 'white');
@@ -67,33 +69,19 @@ addEventListener("storage", () => document.getElementById("User").innerHTML = lo
 document.getElementById("SignIn").addEventListener('click', () => { localStorage.setItem("Log", '1') });
 document.getElementById("CreateAccount").addEventListener('click', () => { localStorage.setItem("Log", '0') });
 
-let pics = ["resources/Assasins Creed.png", "resources/CoD.jpg", "resources/Fifa.jpg",
-    "resources/Fortnite.jpeg", "resources/Skyrim.jpg"];
-let i = 0;
-document.getElementById("prevPic").addEventListener("click", () => {
-    let frame = document.getElementById("PicsShow");
-    if (i == 0) {
-        i = pics.length - 1;
-    }
-    else {
-        i--;
-    }
-    frame.style.backgroundImage = "url(" + pics[i] +")";
-});
-document.getElementById("nextPic").addEventListener("click", () => {
-    let frame = document.getElementById("PicsShow");
-    if (i == pics.length - 1) {
-        i = 0
-    }
-    else {
-        i++;
-    }
-    frame.style.backgroundImage = "url(" + pics[i] +")";
-});
+
 
 let search_input = document.getElementById("Game_Selection");
 let search_buttom = document.getElementById("Search");
 let search_results = document.getElementById("SearchResults");
+
+function display_games_selector() {
+    let element = document.getElementById('Game_Selection');
+    if (element.style.display == 'none') {
+        element.style.display = 'block';
+    }
+    else element.style.display = 'none';
+}
 
 function loadData() {
     let users = localStorage.getItem("users");
@@ -102,33 +90,69 @@ function loadData() {
     else user_data = JSON.parse(users);
     return user_data;
 }
+
+let colors = ['red', 'blue', 'yellow', 'green', 'purple', 'orange', 'aqua', 'gold', 'cyan', 'lime'];
+function set_color()
+{
+    let n = Math.random();    
+    return colors[Math.floor(n*10)];
+}
 search_buttom.addEventListener('click', () => {
     for (let index = 0; index < search_results.children.length; index++) {
-        search_results.children[index].remove();        
+        search_results.children[index].remove();
     }
     let text_in = search_input.value;
+    document.getElementById('game_name').innerHTML = text_in;
     let data = loadData();
     for (let index = 0; index < data.length; index++) {
         if (data[index].games.includes(text_in)) {
-            let x = document.createElement('p');  
-            x.addEventListener('click',()=>{throw_player(x)});     
-            x.innerHTML = data[index].username;
-            search_results.appendChild(x);
+            let paragraph = document.createElement('p');
+            paragraph.innerHTML = data[index].username;
+            paragraph.style.marginBottom = 'auto';
+            paragraph.style.marginTop = 'auto';
+            let after = document.createElement('::after');
+            after.style.backgroundImage = 'url("resources/1831651.png")';
+            after.style.backgroundSize = 'cover';
+            let color = set_color();
+            after.style.backgroundColor = color;
+            after.style.borderStyle = 'hidden';
+            after.style.borderRadius = '50%'
+            after.style.display = 'inline-block';
+            after.style.height = '1.5vw';
+            after.style.width = '1.5vw';
+            after.style.content = '" "';
+            paragraph.appendChild(after);
+            let button = document.createElement('button');
+            button.style.backgroundImage = 'url("resources/plus-large-svgrepo-com.svg")';
+            button.style.backgroundSize = 'cover';
+            button.style.width = '20px';
+            button.style.height = '20px';
+            button.style.borderStyle = 'none';
+            button.style.backgroundColor = 'rgb(128, 128, 128)';
+            button.style.marginBottom = 'auto';
+            button.style.marginTop = 'auto';
+            let div = document.createElement('div');
+            div.style.display = 'flex';
+            div.style.flexDirection = 'row';
+            div.style.justifyContent = 'space-between';
+            div.appendChild(paragraph);
+            div.appendChild(button);
+            button.addEventListener('click', () => { throw_player(paragraph, color) });
+            search_results.appendChild(div);
         }
     }
 });
 let players = [];
-function throw_player(player)
-{
-    if(players.includes(player)) return;
-    players.push(player);
-    if(players.length>3) return;
+function throw_player(player, color) {
+    if (players.includes(player.innerText)) return;
+    players.push(player.innerText);
+    if (players.length > 3) return;
     let div = document.createElement('div');
-    div.setAttribute('title',player.innerHTML);
+    div.setAttribute('title', player.innerText);
     div.style.overflow = 'hidden';
     div.style.position = 'relative';
     let pic = document.createElement('img');
-    pic.setAttribute('src','resources/1831651.png');
+    pic.setAttribute('src', 'resources/1831651.png');
     div.style.opacity = '0.8';
     pic.style.opacity = '0.8';
     div.style.display = 'inline-block';
@@ -136,14 +160,15 @@ function throw_player(player)
     div.style.marginRight = '70%';
     pic.style.width = '100%';
     pic.style.length = '100%';
-    div.style.backgroundColor = "red";
-    div.addEventListener('click',()=>{remove_player(div)});
+    div.style.borderStyle = 'hidden';
+    div.style.borderRadius = '50%';
+    div.style.backgroundColor = color;
+    div.addEventListener('click', () => { remove_player(div) });
     div.appendChild(pic);
     document.getElementById("PicsShow").appendChild(div);
 }
-function remove_player(player)
-{
+function remove_player(player) {
     let i = players.indexOf(player);
-    players.splice(i,1);
+    players.splice(i, 1);
     player.remove();
 }

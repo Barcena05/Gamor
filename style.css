@@ -10,6 +10,7 @@
     --categoryHover: darkorchid;
     --SearchHover: white;
     --ModeHover: rgb(76, 83, 88);
+    --main_img: url("resources/main_light_img.png");
 }
 
 body {
@@ -21,7 +22,7 @@ body {
 }
 
 #Header {
-    position: sticky;
+    position: relative;
     top: 0;
     z-index: 2;
     background-color: inherit;
@@ -146,6 +147,11 @@ body {
     padding: 10px;
 }
 
+#loginBar>li>#CreateAccount {
+    background-color: black;
+    color: white;
+}
+
 .contentCol {
     float: left;
 }
@@ -161,7 +167,7 @@ body {
 }
 
 #Summary {
-    height: 400px;
+    height: 600px;
     width: 30%;
     color: var(--InText);
     font-style: italic;
@@ -171,17 +177,47 @@ body {
     background-size: cover;
 }
 
+#SummaryLoginArea {
+    position: relative;
+    margin-top: 400px;
+    overflow: hidden;
+    width: 100%;
+    height: 200px;
+}
+
+#SummaryLogin {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    font-size: medium;
+}
+
+#SummaryLogin>button {
+    float: left;
+    width: 50%;
+    height: 100%;
+    border-style: hidden;
+    color: var(--InText);
+    border-radius: 20px;
+    background-color: var(--inCol);
+}
+
+#SummaryLogin>#SummaryCreateAccount {
+    background-color: var(--backCol);
+}
+
 #PicsShow {
-    height: 400px;
+    height: 600px;
     position: relative;
     width: 40%;
-    background-image: url('resources/Assasins Creed.png');
-    background-size: 100% 400px;
+    background-image: var(--main_img);
+    background-size: 100% 600px;
 }
 
 #Pic {
     max-width: 100%;
-    height: 400px;
+    height: 600px;
 }
 
 #prevPic {
@@ -203,7 +239,7 @@ body {
 }
 
 #GameSearch {
-    height: 400px;
+    height: 600px;
     width: 30%;
     overflow: auto;
     position: relative;
@@ -232,10 +268,22 @@ body {
     height: 40px;
     padding: 2%;
 }
-#Party
-{
+
+#Party {
     background-color: var(--inCol);
 }
+
+#Party::before {
+    background-image: url("resources/confetti-svgrepo-com.svg");
+    background-size: cover;
+    display: inline-block;
+    height: 1.5vw;
+    width: 1.5vw;
+    content: " ";
+    position: absolute;
+    left: 5%;
+}
+
 .Choise {
     border-style: hidden;
     border-radius: 50px;
@@ -258,22 +306,46 @@ body {
     color: var(--InText);
     height: 50px;
 }
-#Game_Selection_Area
-{
+
+#Game_Selection_Area {
     position: relative;
 }
-#game_name
-{
-    float: left;
+
+#game_name {
+    position: relative;
+    left: 0;
+    margin-top: 12.5px;
+    margin-bottom: 12.5px;
     height: 50%;
+    width: 50%;
+    display: inline-block;
 }
-#Game_Selection
+
+#Games_Selection_Area
 {
+    position: absolute;
+    right: 0;
+    overflow: hidden;
+    display: inline-block;
+}
+#Display_selector
+{
+    background-image: url("resources/options-svgrepo-com.svg");
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    border-style: none;
+    background-color: rgb(128, 128, 128);
+    margin-top: 12.5px;
+}
+#Game_Selection {
     float: right;
     height: 50%;
     background-color: transparent;
     color: var(--InText);
     border-style: hidden;
+    display: none;    
+    margin-top: 12.5px;
 }
 
 #SearchResults {
@@ -290,15 +362,6 @@ body {
     background-color: var(--categoryHover);
 }
 
-#searchBox:focus {
-    border-style: hidden;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    margin: 0;
-    padding: 0;
-    box-shadow: none;
-    text-align: center;
-}
 
 #Search {
     background-color: var(--InText);
@@ -340,6 +403,7 @@ body {
     width: 200px;
     height: 100px;
     font-size: small;
+    font-weight: 600;
     background-color: var(--inCol);
     margin: 0.5%;
     border-style: hidden;
@@ -356,6 +420,21 @@ body {
     content: counter(cat) " ";
 }
 
+#Shooter {
+    background-color: var(--categoryHover);
+}
+
+#ShooterIn {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-image: url("resources/CoD.jpg");
+    background-size: cover;
+    opacity: 0.2;
+}
+
 @media (max-width: 850px) {
     #Summary {
         width: 50%;
@@ -367,6 +446,13 @@ body {
 
     #GameSearch {
         width: 100%;
+    }
+
+    #Party::before {
+        display: inline-block;
+        height: 3vw;
+        width: 3.1vw;
+        content: " ";
     }
 }
 
@@ -382,6 +468,14 @@ body {
 
     #GameSearch {
         width: 100%;
+    }
+    #Party::before {
+        background-image: url("resources/confetti-svgrepo-com.svg");
+        background-size: cover;
+        display: inline-block;
+        height: 3vw;
+        width: 3.1vw;
+        content: " ";
     }
 }
 

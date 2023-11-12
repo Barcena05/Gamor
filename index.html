@@ -48,10 +48,18 @@
     <div id="MainBoard">
 
         <div id="Summary" class="contentCol">
+            <div id="SummaryLoginArea">
+                <div id="SummaryLogin">
+                    <button id="SummaryCreateAccount">
+                        Create account
+                    </button>
+                    <button id="SummarySignIn">
+                        Sign in
+                    </button>
+                </div>
+            </div>
         </div>
         <div id="PicsShow" class="contentCol">
-            <button id="prevPic">Left</button>
-            <button id="nextPic">Right</button>
         </div>
         <div id="GameSearch" class="contentCol">
             <h4 style="position: relative; left: 25%; max-width: 50%;" id="Chosse_Plattform">Choose Plattform!!</h4>
@@ -69,9 +77,10 @@
             <div id="SearchArea">
                 <div id="searchBox">
                     <div id="game_name">
-                        Skyrim
+                        Assasins Creed
                     </div>
                     <div id="Games_Selection_Area">
+                        <button id="Display_selector" onclick="display_games_selector()"></button>
                         <select id="Game_Selection" name="Game_Selection">
                             <option id="Assasins_Creed">Assasins Creed</option>
                             <option id="FIFA">FIFA</option>
@@ -115,8 +124,12 @@
             <div class="Category">
                 <p>Strategy Games</p>
             </div>
-            <div class="Category">
-                <p>Shooter Games</p>
+            <div class="Category" id="Shooter">
+                <p style="position: absolute;">Shooter Games</p>
+                <div id="ShooterIn">
+
+                </div>
+
             </div>
             <div class="Category">
                 <p>All Categories</p>
