@@ -17,7 +17,8 @@ function myFunction_set_colors() {
         r.style.setProperty('--categoryHover', 'darkorchid');
         r.style.setProperty('--SearchHover', 'white');
         r.style.setProperty('--ModeHover', 'rgb(76, 83, 88)');
-        r.style.setProperty('--main_img',"url('resources/main_dark_img.png')");
+        r.style.setProperty('--main_img',"url('resources/pngwing.com1.png')");
+        r.style.setProperty('--main_background','#fe8944');
         localStorage.setItem('--InText', 'white');
         localStorage.setItem('--backCol', 'rgb(26, 32, 40)');
         localStorage.setItem('--inCol', 'rgb(33, 39, 47)');
@@ -29,8 +30,6 @@ function myFunction_set_colors() {
         localStorage.setItem('--categoryHover', 'darkorchid');
         localStorage.setItem('--SearchHover', 'white');
         localStorage.setItem('--ModeHover', 'rgb(76, 83, 88)');
-        let sum = document.getElementById("Summary");
-        sum.style.backgroundImage = "url('resources/dark_s.png')";
     }
     else {
         r.style.setProperty('--InText', 'black');
@@ -44,7 +43,8 @@ function myFunction_set_colors() {
         r.style.setProperty('--categoryHover', 'orange');
         r.style.setProperty('--SearchHover', 'black');
         r.style.setProperty('--ModeHover', 'white');
-        r.style.setProperty('--main_img',"url('resources/main_light_img.png')");
+        r.style.setProperty('--main_img',"url('resources/pngwing.com.png')");
+        r.style.setProperty('--main_background','#7e34ee');
         localStorage.setItem('--InText', 'black');
         localStorage.setItem('--backCol', 'rgb(240,240,240)');
         localStorage.setItem('--inCol', 'white');
@@ -56,8 +56,6 @@ function myFunction_set_colors() {
         localStorage.setItem('--categoryHover', 'orange');
         localStorage.setItem('--SearchHover', 'black');
         localStorage.setItem('--ModeHover', 'white');
-        let sum = document.getElementById("Summary");
-        sum.style.backgroundImage = "url('resources/a.png')";
     }
 }
 
@@ -111,7 +109,7 @@ search_buttom.addEventListener('click', () => {
             paragraph.style.marginBottom = 'auto';
             paragraph.style.marginTop = 'auto';
             let after = document.createElement('::after');
-            after.style.backgroundImage = 'url("resources/1831651.png")';
+            after.style.backgroundImage = 'url("resources/pngwing.com.png")';
             after.style.backgroundSize = 'cover';
             let color = set_color();
             after.style.backgroundColor = color;
@@ -152,7 +150,7 @@ function throw_player(player, color) {
     div.style.overflow = 'hidden';
     div.style.position = 'relative';
     let pic = document.createElement('img');
-    pic.setAttribute('src', 'resources/1831651.png');
+    pic.setAttribute('src', 'resources/pngwing.com.png');
     div.style.opacity = '0.8';
     pic.style.opacity = '0.8';
     div.style.display = 'inline-block';
@@ -161,7 +159,7 @@ function throw_player(player, color) {
     pic.style.width = '100%';
     pic.style.length = '100%';
     div.style.borderStyle = 'hidden';
-    div.style.borderRadius = '50%';
+    div.style.borderRadius = '20%';
     div.style.backgroundColor = color;
     div.addEventListener('click', () => { remove_player(div) });
     div.appendChild(pic);

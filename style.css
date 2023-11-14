@@ -10,7 +10,8 @@
     --categoryHover: darkorchid;
     --SearchHover: white;
     --ModeHover: rgb(76, 83, 88);
-    --main_img: url("resources/main_light_img.png");
+    --main_img: url("resources/pngwing.com.png");
+    --main_background: #7e34ee;
 }
 
 body {
@@ -172,14 +173,11 @@ body {
     color: var(--InText);
     font-style: italic;
     overflow-y: scroll;
-    background-image: url("resources/a.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: var(--inCol);
 }
 
 #SummaryLoginArea {
     position: relative;
-    margin-top: 400px;
     overflow: hidden;
     width: 100%;
     height: 200px;
@@ -211,27 +209,9 @@ body {
     height: 600px;
     position: relative;
     width: 40%;
+    background-color: var(--main_background);
     background-image: var(--main_img);
     background-size: 100% 600px;
-}
-
-#Pic {
-    max-width: 100%;
-    height: 600px;
-}
-
-#prevPic {
-    position: absolute;
-    left: 0;
-    top: 200px;
-    background-color: var(--PicsButtom);
-}
-
-#nextPic {
-    position: absolute;
-    right: 0;
-    top: 200px;
-    background-color: var(--PicsButtom);
 }
 
 #SearchHeading {
@@ -330,12 +310,12 @@ body {
 }
 #Display_selector
 {
-    background-image: url("resources/options-svgrepo-com.svg");
+    background-image: url("resources/ajustes-deslizadores.png");
     background-size: cover;
     width: 20px;
     height: 20px;
     border-style: none;
-    background-color: rgb(128, 128, 128);
+background-color: var(--backCol);
     margin-top: 12.5px;
 }
 #Game_Selection {
