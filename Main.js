@@ -17,8 +17,8 @@ function myFunction_set_colors() {
         r.style.setProperty('--categoryHover', 'darkorchid');
         r.style.setProperty('--SearchHover', 'white');
         r.style.setProperty('--ModeHover', 'rgb(76, 83, 88)');
-        r.style.setProperty('--main_img',"url('resources/pngwing.com1.png')");
-        r.style.setProperty('--main_background','#fe8944');
+        r.style.setProperty('--main_img', "url('resources/pngwing.com1.png')");
+        r.style.setProperty('--main_background', '#fe8944');
         localStorage.setItem('--InText', 'white');
         localStorage.setItem('--backCol', 'rgb(26, 32, 40)');
         localStorage.setItem('--inCol', 'rgb(33, 39, 47)');
@@ -43,8 +43,8 @@ function myFunction_set_colors() {
         r.style.setProperty('--categoryHover', 'orange');
         r.style.setProperty('--SearchHover', 'black');
         r.style.setProperty('--ModeHover', 'white');
-        r.style.setProperty('--main_img',"url('resources/pngwing.com.png')");
-        r.style.setProperty('--main_background','#7e34ee');
+        r.style.setProperty('--main_img', "url('resources/pngwing.com.png')");
+        r.style.setProperty('--main_background', '#7e34ee');
         localStorage.setItem('--InText', 'black');
         localStorage.setItem('--backCol', 'rgb(240,240,240)');
         localStorage.setItem('--inCol', 'white');
@@ -90,10 +90,9 @@ function loadData() {
 }
 
 let colors = ['red', 'blue', 'yellow', 'green', 'purple', 'orange', 'aqua', 'gold', 'cyan', 'lime'];
-function set_color()
-{
-    let n = Math.random();    
-    return colors[Math.floor(n*10)];
+function set_color() {
+    let n = Math.random();
+    return colors[Math.floor(n * 10)];
 }
 search_buttom.addEventListener('click', () => {
     for (let index = 0; index < search_results.children.length; index++) {
@@ -112,7 +111,7 @@ search_buttom.addEventListener('click', () => {
             after.style.backgroundImage = 'url("resources/pngwing.com.png")';
             after.style.backgroundSize = 'cover';
             let color = set_color();
-            after.setAttribute('class','player_icon');
+            after.setAttribute('class', 'player_icon');
             after.style.backgroundColor = color;
             after.style.borderStyle = 'hidden';
             after.style.borderRadius = '50%'
@@ -170,4 +169,40 @@ function remove_player(player) {
     let i = players.indexOf(player);
     players.splice(i, 1);
     player.remove();
+}
+
+var mediaqueryList0 = matchMedia("(min-width: 850px)");
+mediaqueryList0.addListener(set_icons_size);
+var mediaqueryList1 = matchMedia("(min-width: 700px)");
+mediaqueryList1.addListener(set_icons_size);
+var mediaqueryList2 = matchMedia("(max-width:700px)");
+mediaqueryList2.addListener(set_icons_size);
+
+function set_icons_size() {
+    let icons = document.getElementsByClassName('player_icon');
+
+    if (mediaqueryList0.matches) {
+        console.log('La media query 0 se cumple');
+        for (let index = 0; index < icons.length; index++) {
+            const element = icons[index];
+            element.style.height = '1.5vw';
+            element.style.width = '1.5vw';
+        }
+    }
+    else if (mediaqueryList1.matches) {
+        console.log('La media query 1 se cumple');
+        for (let index = 0; index < icons.length; index++) {
+            const element = icons[index];
+            element.style.height = '3vw';
+            element.style.width = '3vw';
+        }
+    }
+    else if (mediaqueryList2.matches) {
+        console.log('La media query 2 se cumple');
+        for (let index = 0; index < icons.length; index++) {
+            const element = icons[index];
+            element.style.height = '3vw';
+            element.style.width = '3vw';
+        }
+    }
 }

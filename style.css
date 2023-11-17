@@ -172,7 +172,6 @@ body {
     width: 30%;
     color: var(--InText);
     font-style: italic;
-    overflow-y: scroll;
     background-color: var(--inCol);
 }
 
@@ -321,7 +320,7 @@ background-color: var(--backCol);
 #Game_Selection {
     float: right;
     height: 50%;
-    background-color: transparent;
+    background-color: var(--backCol);
     color: var(--InText);
     border-style: hidden;
     display: none;    
@@ -408,10 +407,9 @@ background-color: var(--backCol);
     display: flex;
     width: 100%;
     height: 100%;
-    align-items: center;
-    justify-content: center;
-    background-image: url("resources/CoD.jpg");
-    background-size: cover;
+    background-image: url("resources/pngwing.com3.png");
+    background-size: contain;
+    background-repeat: space;
     opacity: 0.2;
 }
 
