@@ -454,6 +454,15 @@ body {
         width: 3.1vw;
         content: " ";
     }
+    .player_icon
+    {
+        #Party::before {
+            display: inline-block;
+            height: 3vw;
+            width: 3.1vw;
+            content: " ";
+        }
+    }
 }
 
 @media (max-width:700px) {
@@ -476,6 +485,15 @@ body {
         height: 3vw;
         width: 3.1vw;
         content: " ";
+    }
+    .player_icon
+    {
+        #Party::before {
+            display: inline-block;
+            height: 3vw;
+            width: 3.1vw;
+            content: " ";
+        }
     }
 }
 

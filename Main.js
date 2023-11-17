@@ -114,6 +114,7 @@ search_buttom.addEventListener('click', () => {
             after.style.backgroundImage = 'url("resources/1831651.png")';
             after.style.backgroundSize = 'cover';
             let color = set_color();
+            after.setAttribute('class','player_icon');
             after.style.backgroundColor = color;
             after.style.borderStyle = 'hidden';
             after.style.borderRadius = '50%'
