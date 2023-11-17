@@ -436,12 +436,11 @@ background-color: var(--backCol);
     }
     .player_icon
     {
-        #Party::before {
             display: inline-block;
             height: 3vw;
             width: 3.1vw;
             content: " ";
-        }
+        
     }
 }
 
@@ -468,12 +467,11 @@ background-color: var(--backCol);
     }
     .player_icon
     {
-        #Party::before {
             display: inline-block;
             height: 3vw;
             width: 3.1vw;
             content: " ";
-        }
+        
     }
 }
 
